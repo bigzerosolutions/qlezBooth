@@ -1,0 +1,58 @@
+<div class="container modal-content">
+  <p class="modal-header text-center"><b>NOTIFICATIONS</b></p>
+  <div class="modal-body" style="overflow:auto;max-height: 280px">
+    <div id="navigation">
+        <ul>
+            <li>
+                <a onclick="swap('sectionOneLinks');return false;" style="text-align: center;cursor: pointer"><b>Pending Reviews</b></a>
+                
+                <ul id="sectionOneLinks" style="display: none;">
+                  <div class="row">
+                    <div class="col-lg-3 ntfDIV"><b>Product Name</b></div>
+                    <div class="col-lg-2 ntfDIV text-center hidden-xs"><b>Purchase Date</b></div>
+                    <div class="col-lg-3 ntfDIV text-center hidden-xs"><b>Product Ratings</b></div>
+                    <div class="col-lg-4 ntfDIV text-center hidden-xs"><b>Random Comments</b></div>
+                  </div>
+
+                  <hr style="margin:2px;border-top: 2px solid #eee" >
+                  <div style="overflow:auto;max-height: 115px">
+                  <li *ngFor="#productDt of products; #idx = index" >
+                    <div class="row" *ngIf="(productDt.starRate == '') || (productDt.comment == '')" > 
+                      <div class="col-lg-3 ntfDIV">{{productDt.productName}}</div>
+                      <div class="col-lg-2 ntfDIV text-center">
+                      <span class="hidden-lg hidden-md- hidden-sm">(Date of purchase)<br></span>{{productDt.productPurchaseDate}}</div>
+                      <div class="col-lg-3 ntfDIV text-center">
+                        <span *ngFor="#ind of inds">
+                              <i class="fa fa-star" #star id="{{idx}}{{ind}}" (click)="selectStar(star,productDt.productName)" [style.color]="color"></i>
+                        </span>
+                      </div>
+                      <div class="col-lg-4 ntfDIV text-center">
+                        <fieldset  align="center">
+                          <input type="radio" id="{{idx}}"  #comment (click)="saveComment(comment,productDt.productName)" name="{{idx}}" value="Excellant"/> Excellant
+                          <input type="radio" id="{{idx}}" #comment (click)="saveComment(comment,productDt.productName)" name="{{idx}}" value="Good" /> Good
+                          <input type="radio" id="{{idx}}"  #comment (click)="saveComment(comment,productDt.productName)" name="{{idx}}" value="Average" /> Average
+                          <input type="radio" id="{{idx}}" #comment (click)="saveComment(comment,productDt.productName)" name="{{idx}}" value="Poor" /> Poor
+                        </fieldset>
+                      </div>
+                      
+                    </div>
+                  </li> 
+                  </div>       
+                </ul>
+            </li>
+            <li>
+                <a  onclick="swap('sectionTwoLinks');return false;" style="text-align: center;cursor: pointer"><b>Offers</b></a>
+                <ul id="sectionTwoLinks" style="display: none;">
+                  <li><a href="#">A link to a page</a></li>
+                  <li><a href="#">A link to a page</a></li>
+                  <li><a href="#">A link to a page</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" >Skip</button>
+  </div>
+</div>
+<navbar></navbar>

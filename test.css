@@ -1,0 +1,116 @@
+body{padding:32px;margin:32px;font-family:Roboto,Arial,sans-serif;font-size:16px}
+li{list-style: none;}
+th{
+  padding: 10px;
+}
+.row{
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+}
+#welcomeDiv{margin-top: 16%}
+#welcomeNote{font-size: 45px;padding-bottom: 30px}
+#welcomeLink{}
+#welcomeLink:hover{color: red!important;}
+.wrapper:hover .flip{
+    color: red;
+    transition: 0.9s;
+    transform: rotateY(180deg);
+}
+.fa-star{
+  color: grey;
+  cursor: pointer;
+}
+.wrapper{
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+}
+#myAccount{
+  text-decoration: none;cursor: pointer;
+}
+#customerNAV{
+  position: absolute;bottom: 0;left: 0;right: 0;background: #000;
+}
+#customerDP{
+  position: absolute;bottom: 40;left:30;width:200px;height: 200px;border-radius: 99%;border: 5px solid blue
+}
+#usernameStyle{
+  position: absolute;color:red;bottom:0;width: 200px;margin:0px 30px;text-align: center;font-weight: 700;font-size: 27px;z-index: 9999999999;
+}
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+ float: left;
+ margin-top: -9px; 
+}
+
+.rating > input { display: none;} 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+    
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+#navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 11px 12px 11px 8px;
+  background-color: #3498db;
+  color: #fff;
+  border: 1px solid #ddd;
+}
+#navigation a:active {
+  padding: 11px 13px 11px 7px;
+  background-color: #444;
+  color: #eee;
+  border: 1px solid #333;
+}
+
+#navigation li li a {
+  text-decoration: none;
+  padding: 3px 3px 3px 17px;
+  background-color: #999;
+  color: #111111;
+}
+#navigation li li a:active {
+  padding: 2px 4px 4px 16px;
+  background-color: #888;
+  color: #000;
+}
+.ntfDIV{
+  padding: 7px;
+}
